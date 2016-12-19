@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/247even/gulp-cssfont64"
+    "url": "https://github.com/ingfrederick/gulp-cssfont64"
   },
   "keywords": [
     "gulpplugin", "encode", "base64", "font", "css", "ttf"
   ],
   "author": {
-    "name": "247even",
-    "url": "https://github.com/247even"
+    "name": "ingfrederick",
+    "url": "https://github.com/ingfrederick"
   },
   "license": "MIT",
   "dependencies": {
@@ -31,10 +31,7 @@
     "node": ">=0.10"
   },
   "readmeFilename": "README.md",
-  "bugs": {
-    "url": "https://github.com/247even/gulp-cssfont64/issues"
-  },
-  "homepage": "https://github.com/247even/gulp-cssfont64",
+  "homepage": "https://github.com/ingfrederick/gulp-cssfont64",
   "_id": "gulp-cssfont64@0.0.1",
   "_from": "gulp-cssfont64@"
 }
