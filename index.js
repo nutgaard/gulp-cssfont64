@@ -37,7 +37,6 @@ module.exports = function() {
 			var filename = path.basename(file.path, fileext);
 			var csswrapper = '@font-face {font-family: '+filename+'; src: url(data:'+mtype+';base64,'+file64+') format("'+ format +'");}';
 			var output = csswrapper;
-			console.log(csswrapper);
 
 			file.contents = new Buffer(output);
 			file.path = gutil.replaceExtension(file.path, '.css');
