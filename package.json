@@ -1,6 +1,6 @@
 {
-  "name": "gulp-cssfont64-fork",
-  "version": "0.0.2",
+  "name": "gulp-cssfont64-formatter",
+  "version": "0.0.1",
   "description": "Encode base64 data from font-files and store the result in a css file.",
   "main": "index.js",
   "scripts": {
