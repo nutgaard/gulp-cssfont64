@@ -12,7 +12,12 @@ var formats = {
     '.eot': 'embedded-opentype'
 };
 
-module.exports = function (formatter) {
+module.exports = function (opts) {
+    // For backwardscompatability, if its a function it means a formatter. Else expects a config-object.
+    var options = typeof opts === 'function' ? {
+        formatter: opts
+    } : opts;
+
     // create a stream through which each file will pass
     return through.obj(function (file, enc, callback) {
         if (file.isNull()) {
@@ -34,14 +39,16 @@ module.exports = function (formatter) {
             var filename = path.basename(file.path, fileext);
 
             var csswrapper = '';
-            if (formatter) {
-                csswrapper = formatter(filename, mtype, file64, format);
+            if (options.formatter) {
+                csswrapper = options.formatter(filename, mtype, file64, format);
             } else {
                 csswrapper = '@font-face {font-family: ' + filename + '; src: url(data:' + mtype + ';base64,' + file64 + ') format("' + format + '");}';
             }
 
+            var extention = options.extention ? options.extention : 'css';
+
             file.contents = new Buffer(csswrapper);
-            file.path = gutil.replaceExtension(file.path, '.css');
+            file.path = gutil.replaceExtension(file.path, '.' + extention);
             return callback(null, file);
         }
     });
